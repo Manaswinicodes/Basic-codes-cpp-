@@ -1,0 +1,20 @@
+#include <iostream>
+
+void reverseStringRecursive(char str[], int start, int end) {
+  if(start>=end) {
+    return;
+  }
+  char temp=str[start];
+  str[start]=str[end];
+  str[end]=temp;
+  reverseStringRecursive(str, start + 1, end - 1);
+}
+
+int main() {
+  char str[]="Hello, world!";
+  int len=strlen(str);
+  reverseStringRecursive(str,0,len - 1);
+  std::cout<<str<< std::endl;  
+  return 0;
+}
+    
